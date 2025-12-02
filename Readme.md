@@ -36,15 +36,19 @@ Responsive Design
 │── style.css
 │── script.js
 │── assets/
-│     ├── images/
-│     ├── icons/
-│     └── screenshots/
+│ ├── images/
+│ ├── icons/
+│ └── screenshots/
 
 ## 📂 How to Use
-1. Clone this repository:  
+
+1. Clone this repository:
    ```bash
    git clone https://github.com/YasirAwaan/portfolio.git
+   ```
+
 ---
+
 🚀 Launch
 
 Instant load. Instant experience.
@@ -56,6 +60,7 @@ Everything here is built with purpose: smooth flow, modern visuals, and a layout
 It represents how I work, how I design, and how I like my projects to speak for themselves: simple, elegant, and undeniably professional.
 
 ## 📫 Connect With Me
+
 - **GitHub:** https://github.com/YasirAwaan
 - **Email:** yasirawan2847@gmail.com
 - **LinkedIn:** (http://www.linkedin.com/in/yasir-awaan)

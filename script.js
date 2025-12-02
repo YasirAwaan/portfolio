@@ -1,4 +1,4 @@
-console.log("hi");
+console.log("Script.js is initializing");
 document.addEventListener("DOMContentLoaded", () => {
   const img = document.querySelector(".pfp-img");
 
