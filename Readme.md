@@ -30,7 +30,7 @@ Responsive Design
 
 ![Portfolio Screenshot]()
 
-## 📁 Project Layout
+📁 Project Layout
 /
 │── index.html
 │── style.css
