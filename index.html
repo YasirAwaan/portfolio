@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preload" href="assets/img/DarkBoy.png" as="image" />
   </head>
-
   <body>
     <!-- NAV -->
     <header>
@@ -21,18 +19,18 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <label class="menu-toggle" for="menu-checkbox">
+        <button class="menu-toggle">
           <svg width="20" height="20" viewBox="0 0 24 24">
             <path
               d="M4 6h16M4 12h16M4 18h16"
               stroke="currentColor"
-              stroke-width="1.6"
+              stroke-width="1.5"
               stroke-linecap="round"
             />
           </svg>
-        </label>
-        <input id="menu-checkbox" class="menu-checkbox" type="checkbox" />
+        </button>
       </div>
+
       <div class="mobile-menu">
         <a href="#home">Home</a>
         <a href="#projects">Projects</a>
@@ -45,16 +43,20 @@
     <main class="hero-wrap" id="home">
       <section class="hero">
         <div class="float f1"></div>
-        <div class="float f2"></div>
+
         <div class="hero-left">
-          <h1>
-            Hi, I’m <span class="name">Yasir</span> — Frontend Web Developer
+          <h1 class="mask-heading">
+            <span class="mask-text"
+              >Hi, I’m <span class="name">Yasir</span> — Frontend Web
+              Developer</span
+            >
           </h1>
           <p>
             I Design and build responsive, modern websites using only HTML CSS &
             JS. Clean code, smooth UI, and pixel-perfect layouts — that's my
             vibe.
           </p>
+
           <div class="skills-row">
             <span class="skill-pill">HTML</span>
             <span class="skill-pill">CSS</span>
@@ -64,6 +66,7 @@
             <span class="skill-pill">Animations</span>
           </div>
         </div>
+
         <div class="hero-right">
           <div class="visual-card">
             <img
@@ -72,8 +75,7 @@
               class="visual-avatar pfp-img"
               loading="lazy"
             />
-
-            <div class="text">Mohammad Yasir</div>
+            <div class="text">Muhammad Yasir</div>
           </div>
         </div>
       </section>
@@ -82,16 +84,15 @@
     <!-- 💼 PROJECTS -->
     <section id="projects" class="projects-section">
       <h2>My Projects</h2>
+
       <div class="project-grid">
+        <!-- Netflix -->
         <div class="project-card">
           <h3>Netflix UI Clone</h3>
-          <p>
-            A responsive Netflix homepage made using HTML and CSS with gradient
-            hover effects.
-          </p>
+          <p>A responsive Netflix homepage made using HTML and CSS.</p>
           <div class="card-buttons">
             <a
-              href="https://flixzonepk.netlify.app/"
+              href="https://net-flixzonepk.vercel.app/"
               target="_blank"
               class="view-demo"
               >Netflix clone</a
@@ -104,11 +105,13 @@
             >
           </div>
         </div>
+
+        <!-- Crystal Auth -->
         <div class="project-card">
           <h3>Crystal-auth-form</h3>
           <p>
-            Crystal-auth-form brings clarity, security, and a smooth sign-in
-            experience — designed to feel premium from the very first click.
+            Crystal-auth-form brings clarity, security, and smooth sign-in
+            interaction.
           </p>
           <div class="card-buttons">
             <a
@@ -125,12 +128,11 @@
             >
           </div>
         </div>
+
+        <!-- Frosted Login -->
         <div class="project-card">
           <h3>Frosted-login-form</h3>
-          <p>
-            A smooth glassmorphic login experience crafted for clarity,
-            elegance, and effortless access — clean, modern, and visually crisp.
-          </p>
+          <p>A clean, modern frosted glass login UI made with HTML & CSS.</p>
           <div class="card-buttons">
             <a
               href="https://glass-login-ui.netlify.app/"
@@ -147,19 +149,18 @@
           </div>
         </div>
 
+        <!-- Technova -->
         <div class="project-card">
           <h3>Technova</h3>
           <p>
-            Tecnova is where modern design meets next-gen innovation —
-            delivering interfaces that feel sharp, fluid, and built for the
-            future.
+            Technova delivers modern, futuristic UI designs with smooth layouts.
           </p>
           <div class="card-buttons">
             <a
               href="https://itstechnova.netlify.app/"
               target="_blank"
               class="view-demo"
-              >Techonva</a
+              >Technova</a
             >
             <a
               href="https://github.com/YasirAwaan/TechNova"
@@ -169,18 +170,17 @@
             >
           </div>
         </div>
+
+        <!-- Ultra Edit -->
         <div class="project-card">
           <h3>Ultra Edit</h3>
-          <p>
-            Where performance meets design. Ultra Edit delivers a polished,
-            modern interface that feels powerful and effortlessly advanced.
-          </p>
+          <p>A polished, modern interface built for performance and design.</p>
           <div class="card-buttons">
             <a
               href="https://ultraeditcode.netlify.app/"
               target="_blank"
               class="view-demo"
-              >Techonva</a
+              >Ultra Edit</a
             >
             <a
               href="https://github.com/YasirAwaan/UltraEdit"
@@ -190,21 +190,23 @@
             >
           </div>
         </div>
+
+        <!-- Hacker Terminal -->
         <div class="project-card">
           <h3>Hacker Terminal</h3>
           <p>
-            Where performance meets design. Ultra Edit delivers a polished,
-            modern interface that feels powerful and effortlessly advanced.
+            A dynamic hacker-style terminal UI with neon effects and command
+            animations.
           </p>
           <div class="card-buttons">
             <a
-              href="https://ultraeditcode.netlify.app/"
+              href="https://hackterminalcode.netlify.app/"
               target="_blank"
               class="view-demo"
               >Hacker Terminal</a
             >
             <a
-              href="https://github.com/YasirAwaan/UltraEdit"
+              href="https://github.com/YasirAwaan/HackerTerminal"
               target="_blank"
               class="source-code"
               >Source Code</a
@@ -214,24 +216,82 @@
       </div>
     </section>
 
-    <section
-      id="about"
-      style="
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 2rem 1rem;
-        color: var(--muted);
-      "
-    ></section>
-    <section
-      id="contact"
-      style="
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 2rem 1rem;
-        color: var(--muted);
-      "
-    ></section>
+    <section id="about" class="about-section reveal-fade">
+      <h2 class="mask-heading">
+        <span class="mask-text">About Me</span>
+      </h2>
+
+      <p class="about-text">
+        I’m <strong>Yasir</strong>, a passionate
+        <strong>Frontend Web Developer</strong> with a focus on crafting clean,
+        responsive, and modern web experiences. I love turning ideas into
+        interactive designs using HTML, CSS, and JavaScript — always keeping a
+        smooth, premium vibe.
+      </p>
+      <p>
+        I’ve worked on multiple projects including UI clones, glassmorphic
+        forms, and polished interfaces that feel effortless yet advanced.
+        Learning and evolving every day is my core mantra.
+      </p>
+    </section>
+    <section class="contact">
+      <h2>Get in Touch</h2>
+      <form id="flex-form">
+        <div class="input-group">
+          <input type="text" name="name" placeholder="" />
+          <label>Your Name</label>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" placeholder="" />
+          <label>Your Email</label>
+        </div>
+        <div class="input-group">
+          <textarea name="message" placeholder=""></textarea>
+          <label>Your Message</label>
+        </div>
+        <!-- From Uiverse.io by eirikvold -->
+        <button type="submit" class="flex-btn">
+          <div class="svg-wrapper-1">
+            <div class="svg-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>Send</span>
+        </button>
+      </form>
+    </section>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    emailjs.init('R_MyzGgNHez09H3YR'); // apni public key
+
+    const form = document.getElementById('flex-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_5trb2sm', 'template_yhr3y74', this)
+        .then(() => {
+          alert('Message sent successfully! 🚀');
+          form.reset();
+        }, (error) => {
+          console.log(error);
+          alert('Oops! Something went wrong 😅');
+        });
+    });
+  });
+</script>
   </body>
 </html>
