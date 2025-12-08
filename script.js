@@ -143,3 +143,20 @@ document.querySelectorAll(".reveal-fade").forEach((el) => {
 
   masks.forEach((m) => io.observe(m));
 })();
+
+const menuToggle = document.querySelector("#menu-toggle");
+const mobileMenu = document.querySelector("#mobile-menu");
+
+menuToggle.addEventListener("click", () => {
+  mobileMenu.classList.toggle("active");
+});
+
+if (window.innerWidth <= 768) {
+  // small devices pe wave ko disable
+  waveActive = false;
+  clearTimeout(waveTimeout);
+  pills.forEach((p) => p.classList.remove("up"));
+} else {
+  // normal devices pe wave
+  activateWave();
+}
