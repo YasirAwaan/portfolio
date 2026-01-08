@@ -28,17 +28,17 @@ Responsive Design
 
 ## 📸 Showcase Preview
 
-![Portfolio Screenshot]()
+![Portfolio Screenshot](assets/img/portfolio.png)
 
-📁 Project Layout
-/
-│── index.html
-│── style.css
-│── script.js
-│── assets/
-│ ├── images/
-│ ├── icons/
-│ └── screenshots/
+## 📁 Project Layout
+
+│index.html
+│ style.css
+│ script.js
+│ assets/
+│images
+│ icons
+│ screenshots
 
 ## 📂 How to Use
 

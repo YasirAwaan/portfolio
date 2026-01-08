@@ -160,3 +160,26 @@ if (window.innerWidth <= 768) {
   // normal devices pe wave
   activateWave();
 }
+
+const navLinks = document.querySelectorAll("nav ul li a");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+const mobileLinks = document.querySelectorAll("#mobile-menu a");
+
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.forEach(l => l.classList.remove("active"));
+    mobileLinks.forEach(l => l.classList.remove("active"));
+
+    link.classList.add("active");
+
+    // mobile menu band
+    document.getElementById("mobile-menu").classList.remove("active");
+  });
+});
