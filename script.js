@@ -75,7 +75,7 @@ const sr = ScrollReveal({
   opacity: 0,
   scale: 0.94,
   easing: "cubic-bezier(0.25, 1, 0.5, 1)",
-  reset: true,
+  reset: false,
 });
 
 sr.reveal(".hero", { origin: "bottom" });
@@ -146,10 +146,12 @@ document.querySelectorAll(".reveal-fade").forEach((el) => {
 
 const menuToggle = document.querySelector("#menu-toggle");
 const mobileMenu = document.querySelector("#mobile-menu");
-
 menuToggle.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
+  menuToggle.classList.toggle("active");
 });
+
+
 
 if (window.innerWidth <= 768) {
   // small devices pe wave ko disable
@@ -161,25 +163,26 @@ if (window.innerWidth <= 768) {
   activateWave();
 }
 
-const navLinks = document.querySelectorAll("nav ul li a");
-
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
-  });
-});
-
 const mobileLinks = document.querySelectorAll("#mobile-menu a");
 
 mobileLinks.forEach(link => {
   link.addEventListener("click", () => {
-    navLinks.forEach(l => l.classList.remove("active"));
     mobileLinks.forEach(l => l.classList.remove("active"));
-
     link.classList.add("active");
 
-    // mobile menu band
-    document.getElementById("mobile-menu").classList.remove("active");
+    // menu close
+   mobileMenu.classList.remove("active");
+menuToggle.classList.remove("active");   // 🔥
+
   });
+});
+document.addEventListener("click", (e) => {
+  if (
+    mobileMenu.classList.contains("active") &&
+    !mobileMenu.contains(e.target) &&
+    !menuToggle.contains(e.target)
+  ) {
+    mobileMenu.classList.remove("active");
+    menuToggle.classList.remove("active");   // 🔥 THIS LINE
+  }
 });

@@ -71,6 +71,13 @@ nav a {
   font-size: 0.95rem;
   transition: all 180ms ease;
 }
+.hero,
+.project-card,
+.mask-text,
+.skill-pill,
+.visual-avatar {
+  will-change: transform, opacity;
+}
 
 #menu-toggle {
   display: none;
@@ -241,20 +248,26 @@ nav ul li a {
 nav ul li a::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: -3px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
   width: 100%;
   height: 2px;
   background: linear-gradient(60deg, #0077ff, #ff00ff, #00b8ff);
   border-radius: 20px;
-
-  transform: scaleX(0);
-  transform-origin: center;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* desktop hover */
 nav ul li a:hover::after {
-  transform: scaleX(1);
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* mobile tap / active */
+nav ul li a.active::after,
+nav ul li a:focus-visible::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 nav ul li a:hover {
@@ -414,6 +427,7 @@ nav ul li a:hover {
   opacity: 0;
   filter: blur(2px);
   transition: 0.5s ease-in-out;
+  contain: layout paint;
 }
 
 .pfp-img-loaded {
@@ -503,6 +517,39 @@ form {
 .input-group input::placeholder,
 .input-group textarea::placeholder {
   color: transparent;
+}
+.menu-btn {
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 120;
+}
+
+.menu-btn span {
+  height: 2px;
+  width: 20px;
+  background: white;
+  border-radius: 10px;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 #send-btn {
@@ -675,6 +722,11 @@ form {
     align-items: center;
     text-align: center;
     height: 100vh;
+  }
+  .hero,
+  .project-card,
+  header {
+    backdrop-filter: none !important;
   }
   .hero-left {
     margin-top: 10%;
