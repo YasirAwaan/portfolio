@@ -16,19 +16,24 @@
   margin: 0;
   padding: 0;
 }
-html {
+html,
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  background: var(--bg-900);
+  color: #e6e9ee;
+  line-height: 1.45;
   scroll-behavior: smooth;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-body {
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial;
-  background: var(--bg-900);
-  color: #e6e9ee;
-  line-height: 1.45;
 }
 
 header {
@@ -131,7 +136,8 @@ nav a {
   overflow: hidden;
   border-radius: 18px;
   padding: 2.3rem;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.02),
       rgba(255, 255, 255, 0.01)
@@ -164,7 +170,9 @@ nav a {
   background: linear-gradient(90deg, #8f94fb, #00e0ff, #4e54c8, #8f94fb);
   background-size: 300% 300%;
   animation: borderMove 6s linear infinite;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -234,7 +242,9 @@ nav a {
   );
   background-size: 500% 500%;
   animation: smoothFlow 4s ease-in-out infinite;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -314,7 +324,9 @@ nav ul li a:hover {
   );
   background-size: 800% 800%;
   animation: borderRotate 7s linear infinite;
-  transition: transform 300ms ease, opacity 0.2s ease-in-out;
+  transition:
+    transform 300ms ease,
+    opacity 0.2s ease-in-out;
 }
 @keyframes borderRotate {
   0% {
@@ -645,7 +657,8 @@ form {
   top: 0;
   bottom: 0;
   transform: translateY(0%);
-  transition: transform 900ms cubic-bezier(0.22, 0.9, 0.2, 1),
+  transition:
+    transform 900ms cubic-bezier(0.22, 0.9, 0.2, 1),
     opacity 700ms ease;
   pointer-events: none;
   z-index: 2;
@@ -660,7 +673,8 @@ form {
   display: inline-block;
   transform: translateY(8px);
   opacity: 0;
-  transition: transform 850ms cubic-bezier(0.22, 0.9, 0.2, 1),
+  transition:
+    transform 850ms cubic-bezier(0.22, 0.9, 0.2, 1),
     opacity 700ms ease;
 }
 
@@ -689,7 +703,8 @@ form {
     opacity: 0;
     pointer-events: none;
 
-    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
       opacity 0.3s ease;
 
     z-index: 90;
