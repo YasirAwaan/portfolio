@@ -312,29 +312,7 @@ nav ul li a:hover {
   object-fit: cover;
   display: block;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
-  border: 3px solid rgba(255, 255, 255, 0.06);
-  background: linear-gradient(
-    90deg,
-    #00e0ff,
-    #0077ff,
-    #ff00ff,
-    #009dff,
-    #8f00ff,
-    #00b8ff
-  );
-  background-size: 800% 800%;
-  animation: borderRotate 7s linear infinite;
-  transition:
-    transform 300ms ease,
-    opacity 0.2s ease-in-out;
-}
-@keyframes borderRotate {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
+  border: 3px solid rgba(255, 0, 0, 0.06);
 }
 .visual-card:hover .visual-avatar {
   transform: translateY(-6px) scale(1.03);
