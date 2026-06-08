@@ -6,7 +6,6 @@ const pills = document.querySelectorAll(".skill-pill");
 let waveActive = false;
 let waveTimeout = null;
 
-// --- WAVE ANIMATION ---
 function startWave(index = 0) {
   if (!waveActive) return;
 
@@ -21,10 +20,9 @@ function startWave(index = 0) {
 }
 
 function activateWave() {
-  if (waveActive) return; // already running
+  if (waveActive) return;
   waveActive = true;
 
-  // small delay to avoid clash with stopWave clearing timeouts
   setTimeout(() => startWave(), 50);
 }
 
@@ -32,33 +30,27 @@ function stopWave() {
   waveActive = false;
   clearTimeout(waveTimeout);
 
-  // remove all active classes for clean reset
   pills.forEach((p) => p.classList.remove("up"));
 }
 
-// --- IMPROVED VISIBILITY-BASED WAVE CONTROL ---
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // skills visible -> wave start fresh
         activateWave();
       } else {
-        // skills gone -> reset wave
         stopWave();
       }
     });
   },
   {
-    threshold: 0.4, // 40% visible required
+    threshold: 0.4,
   }
 );
 
-// observe skills container
 const skillsSection = document.querySelector(".skills-row");
 if (skillsSection) observer.observe(skillsSection);
 
-// start wave on page load if already visible
 window.addEventListener("load", () => {
   const rect = skillsSection.getBoundingClientRect();
   if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -81,7 +73,7 @@ const sr = ScrollReveal({
 sr.reveal(".hero", { origin: "bottom" });
 sr.reveal(".project-card", { origin: "bottom", interval: 160, scale: 0.96 });
 sr.reveal(".about-section", { origin: "right", delay: 300, scale: 0.95 });
-sr.reveal(".contact", { origin: "bottom", delay: 300 }); // class fixed
+sr.reveal(".contact", { origin: "bottom", delay: 300 });
 
 document.querySelectorAll(".reveal-fade").forEach((el) => {
   sr.reveal(el, {
@@ -89,7 +81,6 @@ document.querySelectorAll(".reveal-fade").forEach((el) => {
   });
 });
 
-// Page load fade
 (function () {
   document.documentElement.classList.add("page-fade");
   window.addEventListener("load", () => {
@@ -99,7 +90,6 @@ document.querySelectorAll(".reveal-fade").forEach((el) => {
     });
   });
 })();
-// Mask Reveal
 (function () {
   const masks = document.querySelectorAll(".mask-text");
 
@@ -154,12 +144,10 @@ menuToggle.addEventListener("click", () => {
 
 
 if (window.innerWidth <= 768) {
-  // small devices pe wave ko disable
   waveActive = false;
   clearTimeout(waveTimeout);
   pills.forEach((p) => p.classList.remove("up"));
 } else {
-  // normal devices pe wave
   activateWave();
 }
 
@@ -170,9 +158,8 @@ mobileLinks.forEach(link => {
     mobileLinks.forEach(l => l.classList.remove("active"));
     link.classList.add("active");
 
-    // menu close
    mobileMenu.classList.remove("active");
-menuToggle.classList.remove("active");   // 🔥
+menuToggle.classList.remove("active");
 
   });
 });
@@ -183,6 +170,6 @@ document.addEventListener("click", (e) => {
     !menuToggle.contains(e.target)
   ) {
     mobileMenu.classList.remove("active");
-    menuToggle.classList.remove("active");   // 🔥 THIS LINE
+    menuToggle.classList.remove("active");
   }
 });

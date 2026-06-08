@@ -269,12 +269,10 @@ nav ul li a::after {
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* desktop hover */
 nav ul li a:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
 
-/* mobile tap / active */
 nav ul li a.active::after,
 nav ul li a:focus-visible::after {
   transform: translateX(-50%) scaleX(1);
@@ -345,7 +343,6 @@ nav ul li a:hover {
     transform: translateY(0);
   }
 }
-/* 💡 PROJECTS SECTION 💡 */
 .projects-section {
   max-width: 1100px;
   margin: 2rem auto 3rem;
